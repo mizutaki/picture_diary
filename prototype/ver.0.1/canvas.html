@@ -3,17 +3,19 @@
     <head>
         <meta charset="utf-8">
         <title>scribble　canvas</title>
-        <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
         <script type="text/javascript" src="js/draw.js"></script>
     </head>
     <body>
         <h1>scribble　canvas</h1>
-    <canvas id="myCanvas" width="640" height="480" style="border:#ff0000 solid 1px;">
+    <div id="canvas">
+    <canvas id="myCanvas" width="640" height="480">
         HTML5　Canvasに対応したブラウザーを使用してください。
     </canvas>
-    <input type="button" onclick="clear()">
+    </div>
     <div id="menu">
         <button onclick="saveData();">保存</button>
+        <button onclick="allClear();">全削除</button>
     </div>
 </body>
 </html>
