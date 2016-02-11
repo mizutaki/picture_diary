@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>scribble　canvas</title>
+        <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
+        <script type="text/javascript" src="js/draw.js"></script>
+    </head>
+    <body>
+    <h1>scribble　canvas</h1>
+    <div id="canvas">
+        <canvas id="myCanvas" width="640" height="480">
+            HTML5　Canvasに対応したブラウザーを使用してください。
+        </canvas>
+    </div>
+    <div id="sentence">
+        <p id="text"></p>
+    </div>
+    <div id="workDesk">
+        <p>文章を書いてください</p>
+        <textarea id="textarea" rows="10" cols="50">
+        </textarea>
+    </div>
+    <div id="menu" style="clear:both">
+        <button onclick="saveData();">保存</button>
+        <button onclick="allClear();">全削除</button>
+    </div>
+</body>
+</html>

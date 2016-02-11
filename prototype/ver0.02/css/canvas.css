@@ -1,0 +1,25 @@
+#canvas {
+  width: 640px;
+  height: 480px;
+  float: left;
+}
+#myCanvas {
+  border:#000000 solid 1px;
+}
+
+#sentence {
+  width: 640px;
+  height: 480px;
+  border:#000000 solid 1px;
+  float:left;
+}
+#workDesk {
+  padding-left: 5px; 
+  float:left;
+}
+#text {
+  writing-mode: tb-rl;
+  font-size: 30px;
+  font-family: cursive;
+  float: right;
+}

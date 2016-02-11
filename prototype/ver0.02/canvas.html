@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>scribble　canvas</title>
+        <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
+        <script type="text/javascript" src="js/lib/fabric.js"></script>
+        <script type="text/javascript" src="js/lib/jscolor.js"></script>
+        <script type="text/javascript" src="js/draw.js"></script>
+    </head>
+    <body>
+    <h1>scribble　canvas</h1>
+    <div id="canvas">
+        <canvas id="myCanvas" width="640" height="480">
+            HTML5　Canvasに対応したブラウザーを使用してください。
+        </canvas>
+    </div>
+    <input id="deleteAll" type="button" value="全削除">
+    <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">描画</label>
+    <label><input type="radio" name="mode" value="select" onclick="modeChange();">移動</label>
+    <input id="color" class="jscolor">
+</body>
+</html>
