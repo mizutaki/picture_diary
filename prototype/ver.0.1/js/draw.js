@@ -16,6 +16,9 @@ window.addEventListener('load', function(){
   monitor();
 }, true);
 
+//window.addEventListener('onkeyup', textarea);
+window.addEventListener('keydown', textarea);
+
 //canvas内のDOMが変更されたか監視する
 function monitor() {
   var target = document.getElementById('canvas');
@@ -86,4 +89,22 @@ function saveData() {
 function allClear() {
   var can = document.getElementById('myCanvas');
   can.parentNode.removeChild(can);
+}
+
+function textarea() {
+  var text = document.getElementById('textarea');
+  //console.log(text.value);
+  var p = document.getElementById('text');
+  var sentences = text.value.split(/\r\n|\r|\n/);
+  console.log(sentences);
+  var textValue = "";
+  for (var i = 0; i < sentences.length; i++) {
+    console.log(sentences[i]);
+    /*if (sentences.toString().match(/\S/g) || typeof sentences[i] === "undefined") {
+      continue;
+    }*/
+    var sentence = sentences[i] + "<br>";
+    textValue += sentence;
+  }
+  p.innerHTML = textValue;
 }

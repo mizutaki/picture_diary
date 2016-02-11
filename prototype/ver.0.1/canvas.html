@@ -7,13 +7,20 @@
         <script type="text/javascript" src="js/draw.js"></script>
     </head>
     <body>
-        <h1>scribble　canvas</h1>
+    <h1>scribble　canvas</h1>
     <div id="canvas">
-    <canvas id="myCanvas" width="640" height="480">
-        HTML5　Canvasに対応したブラウザーを使用してください。
-    </canvas>
+        <canvas id="myCanvas" width="640" height="480">
+            HTML5　Canvasに対応したブラウザーを使用してください。
+        </canvas>
     </div>
-    <div id="menu">
+    <div id="sentence">
+        <p id="text"></p>
+    </div>
+    <div id="workDesk">
+        <textarea id="textarea" rows="10" cols="50">
+        </textarea>
+    </div>
+    <div id="menu" style="clear:both;">
         <button onclick="saveData();">保存</button>
         <button onclick="allClear();">全削除</button>
     </div>
