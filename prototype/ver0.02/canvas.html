@@ -5,7 +5,7 @@
         <title>scribble　canvas</title>
         <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
         <script type="text/javascript" src="js/lib/fabric.js"></script>
-        <script type="text/javascript" src="js/lib/jscolor.js"></script>
+        <script type="text/javascript" src="js/lib/cpick.js"></script>
         <script type="text/javascript" src="js/draw.js"></script>
         <script type="text/javascript" src="js/sentence.js"></script>
     </head>
@@ -20,7 +20,7 @@
         </div>
         <div id="canvasOption">
             <ul>
-            <li><label>色：</label><input id="color" class="jscolor"></li>
+            <li><label>色：</label><input type="text" value="#d0c354"size="12" id="t1" class="html5jp-cpick [coloring:true]" onchange=""/></li>
             <li><label>操作：</label>
                 <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">描画</label>
                 <label><input type="radio" name="mode" value="select" onclick="modeChange();">移動</label>

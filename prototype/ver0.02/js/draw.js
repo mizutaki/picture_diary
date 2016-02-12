@@ -2,16 +2,16 @@ var canvas;
 window.addEventListener('load', function() {
   canvas = new fabric.Canvas('myCanvas');
   canvas.isDrawingMode = true;
-  var color = document.getElementById('color');
-  canvas.freeDrawingBrush.color = '#' + color.value;
+  var color = document.getElementById('t1');
+  canvas.freeDrawingBrush.color = color.style.backgroundColor;
   
-
   document.getElementById('deleteAll').addEventListener('click', function() {
     canvas.clear().renderAll();
   },false);
 
-  document.getElementById('color').addEventListener('change', function() {
-    canvas.freeDrawingBrush.color = '#' + this.value;  
+  document.getElementById('canvas').addEventListener('mouseover', function() {
+    var color = document.getElementById('t1');
+    canvas.freeDrawingBrush.color = color.style.backgroundColor;
   })
 });
 
