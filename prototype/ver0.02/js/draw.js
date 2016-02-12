@@ -23,5 +23,3 @@ function modeChange() {
     canvas.isDrawingMode = false;
   }
 }
-
-
