@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
         <script type="text/javascript" src="js/lib/fabric.js"></script>
         <script type="text/javascript" src="js/lib/cpick.js"></script>
+        <script type="text/javascript" src="js/lib/html2canvas.js"></script>
         <script type="text/javascript" src="js/draw.js"></script>
         <script type="text/javascript" src="js/sentence.js"></script>
     </head>
@@ -13,29 +14,39 @@
     <h1>scribble　canvas</h1>
     <main>
     <article>
-        <div id="canvas">
-            <canvas id="myCanvas" width="640" height="480">
-                HTML5　Canvasに対応したブラウザーを使用してください。
-            </canvas>
-        </div>
-        <div id="canvasOption">
-            <ul>
-            <li><label>色：</label><input type="text" value="#d0c354"size="12" id="t1" class="html5jp-cpick [coloring:true]" onchange=""/></li>
-            <li><label>操作：</label>
-                <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">描画</label>
-                <label><input type="radio" name="mode" value="select" onclick="modeChange();">移動</label>
-                <input id="deleteAll" type="button" value="全削除"></li>
-            </li>
+        <div id="pictureDiary">
+            <div id="canvas">
+                <canvas id="myCanvas" width="640" height="480">
+                </canvas>
+            </div>
+            <div id="sentence">
+                <canvas id="sentenceCanvas" width="640" height="480">
+                </canvas>
+            </div>
         </div>
     </article>
     <article>
-        <div id="sentence">
-            <p id="text"></p>
+        <div id="canvasOption">
+            <ul>
+            <li>
+                <label>色：</label>
+                <input type="text" value="#d0c354"size="12" id="t1" class="html5jp-cpick [coloring:true]" onchange=""/>
+            </li>
+            <li>
+                <label>操作：</label>
+                <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">描画</label>
+                <label><input type="radio" name="mode" value="select" onclick="modeChange();">移動</label>
+                <input id="deleteAll" type="button" value="全削除">
+                <input id="save" type="button" value="保存" onclick="save();">
+                <a href="" id="ss" download="ss.png">スクリーンショット</a>
+            </li>
+            </ul>
         </div>
         <div id="workDesk">
-            <p>文章を書いてください。<br>左側の文章入力欄に反映されます。</p>
+            <p>文章を書いて、「反映」ボタンをください。<br>左側の文章入力欄に反映されます。</p>
             <textarea id="textarea" rows="10" cols="50">
             </textarea>
+            <input type="button" value="反映" onclick="paste();">
         </div>
     </article>
 </main>
