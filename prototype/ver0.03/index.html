@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>scribble　canvas</title>
+        <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
+        <script type="text/javascript" src="js/lib/fabric.js"></script>
+        <script type="text/javascript" src="js/lib/cpick.js"></script>
+        <script type="text/javascript" src="js/lib/html2canvas.js"></script>
+        <script type="text/javascript" src="js/draw.js"></script>
+        <script type="text/javascript" src="js/sentence.js"></script>
+    </head>
+    <body>
+    <h1>絵日記作成</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">絵日記作成</a></li>
+            <li><a href="list.html">一覧表示</a></li>
+        </ul>
+    </nav>
+    <main>
+    <article>
+        <div id="pictureDiary">
+            <div id="imageBox">
+                <canvas id="imageCanvas" width="640" height="480">
+                </canvas>
+            </div>
+            <div id="sentenceBox">
+                <canvas id="sentenceCanvas" width="640" height="480">
+                </canvas>
+            </div>
+        </div>
+        <div id="option">
+            <div id="pictureCanvasOption">
+                <ul>
+                <li>
+                    <label>色：</label>
+                    <input type="text" value="#d0c354"size="12" id="t1" class="html5jp-cpick [coloring:true]"/>
+                </li>
+                <li>
+                    <label>操作：</label>
+                    <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">描画</label>
+                    <label><input type="radio" name="mode" value="select" onclick="modeChange();">移動</label>
+                    <input id="deleteAll" type="button" value="全削除">
+                    <input id="save" type="button" value="保存" onclick="save();">
+                    <a href="" id="download" download="ss.png">スクリーンショット</a>
+                </li>
+                </ul>
+            </div>
+            <div id="sentenceCanvasWork">
+                <p>文章を書いて、「反映」ボタンをください。<br>左側の文章入力欄に反映されます。</p>
+                <textarea id="textarea" rows="10" cols="50">
+                </textarea>
+                <input type="button" value="反映" onclick="paste();">
+            </div>
+        </div>
+        <div class="clear"></div>
+    </article>
+</main>
+</body>
+</html>
