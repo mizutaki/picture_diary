@@ -25,12 +25,28 @@ function modeChange() {
 }
 
 function save() {
-  console.log('aaaaa');
   var target = document.getElementById('pictureDiary');
-  console.log(target);
   html2canvas(target, {
     onrendered: function(canvas) {
-      document.getElementById('download').href = canvas.toDataURL('image/png');
+      var dataURL = canvas.toDataURL('image/png');
+       // Decode the dataURL    
+      var binary = atob(dataURL.split(',')[1]);
+      // Create 8-bit unsigned array
+      var array = [];
+      for(var i = 0; i < binary.length; i++) {
+        array.push(binary.charCodeAt(i));
+      }
+      // Return our Blob object
+      var blob = new Blob([new Uint8Array(array)], {type: 'image/png'});
+      var fd = new FormData();
+      fd.append("image", blob);
+      $.ajax({
+        url: "/save",
+        type: "POST",
+        data: fd,
+        processData: false,
+        contentType: false,
+      });
     },
     width:650,
     heigth:1150
