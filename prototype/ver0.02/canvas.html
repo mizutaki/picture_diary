@@ -15,39 +15,40 @@
     <main>
     <article>
         <div id="pictureDiary">
-            <div id="canvas">
-                <canvas id="myCanvas" width="640" height="480">
+            <div id="imageBox">
+                <canvas id="imageCanvas" width="640" height="480">
                 </canvas>
             </div>
-            <div id="sentence">
+            <div id="sentenceBox">
                 <canvas id="sentenceCanvas" width="640" height="480">
                 </canvas>
             </div>
         </div>
-    </article>
-    <article>
-        <div id="canvasOption">
-            <ul>
-            <li>
-                <label>色：</label>
-                <input type="text" value="#d0c354"size="12" id="t1" class="html5jp-cpick [coloring:true]" onchange=""/>
-            </li>
-            <li>
-                <label>操作：</label>
-                <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">描画</label>
-                <label><input type="radio" name="mode" value="select" onclick="modeChange();">移動</label>
-                <input id="deleteAll" type="button" value="全削除">
-                <input id="save" type="button" value="保存" onclick="save();">
-                <a href="" id="ss" download="ss.png">スクリーンショット</a>
-            </li>
-            </ul>
+        <div id="option">
+            <div id="pictureCanvasOption">
+                <ul>
+                <li>
+                    <label>色：</label>
+                    <input type="text" value="#d0c354"size="12" id="t1" class="html5jp-cpick [coloring:true]"/>
+                </li>
+                <li>
+                    <label>操作：</label>
+                    <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">描画</label>
+                    <label><input type="radio" name="mode" value="select" onclick="modeChange();">移動</label>
+                    <input id="deleteAll" type="button" value="全削除">
+                    <input id="save" type="button" value="保存" onclick="save();">
+                    <a href="" id="download" download="ss.png">スクリーンショット</a>
+                </li>
+                </ul>
+            </div>
+            <div id="sentenceCanvasWork">
+                <p>文章を書いて、「反映」ボタンをください。<br>左側の文章入力欄に反映されます。</p>
+                <textarea id="textarea" rows="10" cols="50">
+                </textarea>
+                <input type="button" value="反映" onclick="paste();">
+            </div>
         </div>
-        <div id="workDesk">
-            <p>文章を書いて、「反映」ボタンをください。<br>左側の文章入力欄に反映されます。</p>
-            <textarea id="textarea" rows="10" cols="50">
-            </textarea>
-            <input type="button" value="反映" onclick="paste();">
-        </div>
+        <div class="clear"></div>
     </article>
 </main>
 </body>

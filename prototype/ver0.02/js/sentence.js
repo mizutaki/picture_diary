@@ -1,8 +1,6 @@
-var sentenceCanvas;
 var sentenceContext;
 window.addEventListener('load', function() {
-  //document.getElementById('textarea').addEventListener('keydown', textarea);
-  sentenceCanvas = document.getElementById('sentenceCanvas');
+  var sentenceCanvas = document.getElementById('sentenceCanvas');
   sentenceContext = sentenceCanvas.getContext('2d');
   sentenceContext.font = "25px 'ＭＳ Ｐゴシック'";
 });

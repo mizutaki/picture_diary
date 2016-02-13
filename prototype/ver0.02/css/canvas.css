@@ -1,35 +1,45 @@
+h1 {
+  text-align: center;
+}
+main {
+  width: auto;
+  height: auto;
+}
 #pictureDiary {
-  vertical-align: center;
+  display: inline-block;
 }
-#canvas {
+#imageBox {
   width: 640px;
   height: 480px;
-  float: left;
 }
-#myCanvas {
+#imageCanvas {
   border:#000000 solid 1px;
 }
-
-#sentence {
+#option {
+  float: right;
+  margin-left: 50px;
+}
+#sentenceBox {
   width: 640px;
   height: 480px;
   border:#000000 solid 1px;
-  clear: both;
 }
-#workDesk {
-  padding-left: 20px;
-  float:left;
+#sentenceCanvasWork {
 }
 #text {
   writing-mode: tb-rl;
   font-size: 30px;
   font-family: cursive;
-  float: right;
 }
-#canvasOption {
-  float: left;
+#pictureCanvasOption {
+  display: inline-block;
+
 }
-#canvasOption ul {
+#pictureCanvasOption ul {
   list-style: none;
   padding-left: 20px;
+}
+
+.clear {
+  clear: both;
 }

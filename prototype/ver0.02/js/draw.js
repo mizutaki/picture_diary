@@ -1,6 +1,6 @@
 var picturecanvas;
 window.addEventListener('load', function() {
-  picturecanvas = new fabric.Canvas('myCanvas');
+  picturecanvas = new fabric.Canvas('imageCanvas');
   picturecanvas.isDrawingMode = true;
   var color = document.getElementById('t1');
   picturecanvas.freeDrawingBrush.color = color.style.backgroundColor;
@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
     picturecanvas.clear().renderAll();
   },false);
 
-  document.getElementById('canvas').addEventListener('mouseover', function() {
+  document.getElementById('imageBox').addEventListener('mouseover', function() {
     var color = document.getElementById('t1');
     picturecanvas.freeDrawingBrush.color = color.style.backgroundColor;
   })
@@ -30,7 +30,9 @@ function save() {
   console.log(target);
   html2canvas(target, {
     onrendered: function(canvas) {
-      document.getElementById('ss').href = canvas.toDataURL('image/png');
-    }
-  })
+      document.getElementById('download').href = canvas.toDataURL('image/png');
+    },
+    width:650,
+    heigth:1150
+  });
 }
