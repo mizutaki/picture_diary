@@ -29,6 +29,8 @@ function save() {
   html2canvas(target, {
     onrendered: function(canvas) {
       var dataURL = canvas.toDataURL('image/png');
+      //var im = document.getElementById('img');
+      //im.src = dataURL;
        // Decode the dataURL    
       var binary = atob(dataURL.split(',')[1]);
       // Create 8-bit unsigned array

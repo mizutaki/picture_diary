@@ -1,14 +1,12 @@
+<%#coding: UTF-8 %>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="utf-8">
         <title>scribble　canvas</title>
         <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
-        <script type="text/javascript" src="js/lib/fabric.js"></script>
-        <script type="text/javascript" src="js/lib/cpick.js"></script>
-        <script type="text/javascript" src="js/lib/html2canvas.js"></script>
-        <script type="text/javascript" src="js/draw.js"></script>
-        <script type="text/javascript" src="js/sentence.js"></script>
+        <script type="text/javascript" src="/js/lib/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/draw.js"></script>
     </head>
     <body>
     <h1>一覧表示</h1>
@@ -19,7 +17,10 @@
         </ul>
     </nav>
     <main>
-        一覧表示準備中
+        <% @hash.each do |id,url| %>
+          <img src=<%= url %>>
+          <a href="/download/<%= id %>">file download</a>
+        <% end %>
     </main>
 </body>
 </html>
