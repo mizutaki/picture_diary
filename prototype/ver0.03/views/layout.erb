@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>scribble　canvas</title>
+        <link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
+        <script type="text/javascript" src="/js/lib/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="/js/draw.js"></script>
+    </head>
+    <body>
+        <h1><%= @h1 %></h1>
+        <nav>
+        <ul>
+            <li><a href="/">create picture diary</a></li>
+            <li><a href="/list">picture diary collection</a></li>
+        </ul>
+        </nav>
+        <%= yield %>
+    </body>
+</html>

@@ -23,6 +23,7 @@ class App < Sinatra::Base
   picture = db[:picture]
 
   get '/' do
+    @h1 = "create picture diary"
     erb :index
   end
 
@@ -39,6 +40,7 @@ class App < Sinatra::Base
         new_img.write(create_filepath + "_small.png")
       @hash[picture[:picture_id]] = "/tmp_images/" + picture[:picture_id].to_s + ".png" + "_small.png"
     end
+    @h1 = "picture diary collection"
     erb :list
   end
 
