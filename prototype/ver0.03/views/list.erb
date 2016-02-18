@@ -3,7 +3,13 @@
 <script type="text/javascript" src="/js/draw.js"></script>
 <main>
 <% @hash.each do |id,url| %>
-    <img src=<%= url %>>
-    <a href="/download/<%= id %>">file download</a>
+    <div class="collection">
+        <p class="center"><img src=<%= url %>></p>
+        <div class="center">
+        <!--<p class="downloasimage"><a href="/download/<%= id %>">download</a></p>-->
+            <input id="downloadDiary" class="center" type="button" value="download" onclick="downloadDiary(<%= id %>);">
+            <input id="deleteDiary" class="center" type="button" value="delete" onclick="deleteDiary(<%= id %>);">
+        </div>
+    </div>
 <% end %>
 </main>

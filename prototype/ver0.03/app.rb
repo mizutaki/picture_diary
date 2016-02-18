@@ -44,12 +44,19 @@ class App < Sinatra::Base
     erb :list
   end
 
+  get '/download' do
+    download_url = "download/#{params[:id]}"
+  end
+
   get '/download/:id' do
-    p params[:id]
     pic = picture.where(picture_id: params[:id]).first
     file_name = pic[:picture_id]
     response.headers["Content-Disposition"] = "attachment"
     send_file "public/tmp_images/#{file_name}.png"
+  end
+
+  post '/delete' do
+    picture.where(picture_id: params[:id]).delete
   end
 
   post '/save' do

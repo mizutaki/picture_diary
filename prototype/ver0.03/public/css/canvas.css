@@ -6,7 +6,7 @@ nav {
   padding: 5px;
 }
 
-nav ul, nav li {
+ul, li {
   list-style-type: none;
   display: inline;
   padding: 0px 10px;
@@ -48,4 +48,17 @@ nav ul, nav li {
 
 .clear {
   clear: both;
+}
+
+div.collection {
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  width: 175px;
+  float: left;
+  margin: 10px;
+}
+
+.center {
+  text-align: center;
+  margin: 5px;
 }

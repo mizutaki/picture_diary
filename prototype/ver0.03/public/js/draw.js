@@ -29,9 +29,7 @@ function save() {
   html2canvas(target, {
     onrendered: function(canvas) {
       var dataURL = canvas.toDataURL('image/png');
-      //var im = document.getElementById('img');
-      //im.src = dataURL;
-       // Decode the dataURL    
+      // Decode the dataURL
       var binary = atob(dataURL.split(',')[1]);
       // Create 8-bit unsigned array
       var array = [];
@@ -52,5 +50,31 @@ function save() {
     },
     width:650,
     heigth:1150
+  });
+}
+
+function downloadDiary(id) {
+  $.ajax({
+    url: "/download",
+    type: "GET",
+    data: {
+      id: id
+    },
+    success: function(redirectUrl){
+      location.href = redirectUrl;
+    },
+    error: function() {
+      alert('it failed to download');
+    }
+  });
+}
+
+function deleteDiary(id) {
+  $.ajax({
+    url: "/delete",
+    type: "POST",
+    data: {
+      id: id
+    }
   });
 }
