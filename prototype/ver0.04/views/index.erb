@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="css/canvas.css" type="text/css" media="all">
+
+<script type="text/javascript" src="/js/lib/fabric.js"></script>
+<script type="text/javascript" src="/js/lib/cpick.js"></script>
+<script type="text/javascript" src="/js/lib/html2canvas.js"></script>
+<script type="text/javascript" src="/js/lib/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/draw.js"></script>
+<script type="text/javascript" src="/js/sentence.js"></script>
+<main>
+<article>
+    <div id="pictureDiary">
+        <div id="imageBox">
+            <canvas id="imageCanvas" width="640" height="480">
+            </canvas>
+        </div>
+        <div id="sentenceBox">
+            <canvas id="sentenceCanvas" width="640" height="480">
+            </canvas>
+        </div>
+    </div>
+    <div id="option">
+        <div id="pictureCanvasOption">
+            <ul>
+            <li>
+                <label>color:</label>
+                <input type="text" value="#d0c354"size="12" id="t1" class="html5jp-cpick [coloring:true]"/>
+            </li>
+            <li>
+                <label>operation:</label>
+                <label><input type="radio" name="mode" value="write" checked="checked" onclick="modeChange();">draw</label>
+                <label><input type="radio" name="mode" value="select" onclick="modeChange();">move</label>
+                <input id="deleteAll" type="button" value="clear">
+                <input id="save" type="button" value="save" onclick="save();">
+                <!--<a href="" id="download" download="ss.png">スクリーンショット</a>-->
+            </li>
+            </ul>
+        </div>
+        <div id="sentenceCanvasWork">
+            <ul>
+            <li>
+                <input id="datetimepicker" type="text">
+            </li>
+            <li>
+                <textarea id="textarea" rows="10" cols="35" placeholder="write a sentence, please press the button.it will be reflected on the left side of the text input field."></textarea>
+            </li>
+            <li>
+                <input type="button" value="write" onclick="paste();">
+            </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+</article>
+</main>
+<link rel="stylesheet" href="css/lib/jquery.datetimepicker.css">
+<script type="text/javascript" src="/js/lib/jquery.datetimepicker.full.js"></script>
+<script>
+$(function() {
+  $('#datetimepicker').datetimepicker({
+    timepicker: false,
+    format: 'Y/m/d'
+  });
+
+});
+</script>
